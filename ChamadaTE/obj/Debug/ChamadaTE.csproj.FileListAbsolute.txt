@@ -1,0 +1,15 @@
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\ChamadaTE.exe.config
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\ChamadaTE.exe
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\ChamadaTE.pdb
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\Google.Protobuf.dll
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\MySql.Data.dll
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\Google.Protobuf.xml
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\bin\Debug\MySql.Data.xml
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.csprojAssemblyReference.cache
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.Form1.resources
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.Properties.Resources.resources
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.csproj.GenerateResource.cache
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.csproj.CoreCompileInputs.cache
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.csproj.CopyComplete
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.exe
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\ChamadaTE\obj\Debug\ChamadaTE.pdb

@@ -1,0 +1,9 @@
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\bin\Debug\netcoreapp2.0\Modelo.deps.json
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\bin\Debug\netcoreapp2.0\Modelo.dll
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\bin\Debug\netcoreapp2.0\Modelo.pdb
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\obj\Debug\netcoreapp2.0\Modelo.csprojAssemblyReference.cache
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\obj\Debug\netcoreapp2.0\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\obj\Debug\netcoreapp2.0\Modelo.AssemblyInfoInputs.cache
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\obj\Debug\netcoreapp2.0\Modelo.AssemblyInfo.cs
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\obj\Debug\netcoreapp2.0\Modelo.dll
+C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Models\obj\Debug\netcoreapp2.0\Modelo.pdb

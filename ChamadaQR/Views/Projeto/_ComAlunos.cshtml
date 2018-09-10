@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Modelo.Cadastros.Projeto>
+
+<div class="card-block">
+    <div class="card-header text-white badge-warning text-center">Alunos Registrados no Projeto</div>
+    <div class="card-body">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                       @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

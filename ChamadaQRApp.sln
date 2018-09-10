@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChamadaQR", "ChamadaQR\ChamadaQR.csproj", "{1D61E7D5-68E4-4CCF-8D5E-2B45ADF7DD1A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB8C2775-B1C7-4428-9811-909BEF33CAFF} = {DB8C2775-B1C7-4428-9811-909BEF33CAFF}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Models\Modelo.csproj", "{DB8C2775-B1C7-4428-9811-909BEF33CAFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistencia", "Persistencia\Persistencia.csproj", "{9C275760-BF5D-4070-B30D-0426EE67BE88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChamadaWS", "ChamadaWS\ChamadaWS.csproj", "{5135A433-F32B-4B65-A158-0E80A3FF838A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB8C2775-B1C7-4428-9811-909BEF33CAFF} = {DB8C2775-B1C7-4428-9811-909BEF33CAFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChamadaTE", "ChamadaTE\ChamadaTE.csproj", "{06A585D9-E25D-4E8F-A9C9-97D738D7EEA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D61E7D5-68E4-4CCF-8D5E-2B45ADF7DD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D61E7D5-68E4-4CCF-8D5E-2B45ADF7DD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D61E7D5-68E4-4CCF-8D5E-2B45ADF7DD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D61E7D5-68E4-4CCF-8D5E-2B45ADF7DD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8C2775-B1C7-4428-9811-909BEF33CAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8C2775-B1C7-4428-9811-909BEF33CAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8C2775-B1C7-4428-9811-909BEF33CAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8C2775-B1C7-4428-9811-909BEF33CAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C275760-BF5D-4070-B30D-0426EE67BE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C275760-BF5D-4070-B30D-0426EE67BE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C275760-BF5D-4070-B30D-0426EE67BE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C275760-BF5D-4070-B30D-0426EE67BE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5135A433-F32B-4B65-A158-0E80A3FF838A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5135A433-F32B-4B65-A158-0E80A3FF838A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5135A433-F32B-4B65-A158-0E80A3FF838A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5135A433-F32B-4B65-A158-0E80A3FF838A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A585D9-E25D-4E8F-A9C9-97D738D7EEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A585D9-E25D-4E8F-A9C9-97D738D7EEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A585D9-E25D-4E8F-A9C9-97D738D7EEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A585D9-E25D-4E8F-A9C9-97D738D7EEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EFC8D00-A1EE-44CA-89AB-C4C69D072508}
+	EndGlobalSection
+EndGlobal
