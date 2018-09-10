@@ -13458,11 +13458,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\ChamadaWS\\ChamadaWS.csproj",
+      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\ChamadaWS\\ChamadaWS.csproj",
       "projectName": "ChamadaWS",
-      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\ChamadaWS\\ChamadaWS.csproj",
+      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\ChamadaWS\\ChamadaWS.csproj",
       "packagesPath": "C:\\Users\\evert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\ChamadaWS\\obj\\",
+      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\ChamadaWS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

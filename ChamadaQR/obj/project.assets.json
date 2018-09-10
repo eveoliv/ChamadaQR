@@ -13366,11 +13366,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\ChamadaQR\\ChamadaQR.csproj",
+      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\ChamadaQR\\ChamadaQR.csproj",
       "projectName": "ChamadaQR",
-      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\ChamadaQR\\ChamadaQR.csproj",
+      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\ChamadaQR\\ChamadaQR.csproj",
       "packagesPath": "C:\\Users\\evert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\ChamadaQR\\obj\\",
+      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\ChamadaQR\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13389,8 +13389,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\Modelo.csproj": {
-              "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\Modelo.csproj"
+            "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\Modelo.csproj": {
+              "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\Modelo.csproj"
             }
           }
         }

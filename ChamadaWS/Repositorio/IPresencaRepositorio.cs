@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChamadaWS.Repositorio
 {
-    interface IPresencaRepositorio
+    public interface IPresencaRepositorio
     {
         void Add(Presenca presenca);
         IEnumerable<Presenca> GetAll();

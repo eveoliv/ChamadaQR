@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\Modelo.csproj",
+      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\Modelo.csproj",
       "projectName": "Modelo",
-      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\Modelo.csproj",
+      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\Modelo.csproj",
       "packagesPath": "C:\\Users\\evert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\obj\\",
+      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

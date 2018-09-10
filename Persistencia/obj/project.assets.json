@@ -686,11 +686,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Persistencia\\Persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Persistencia\\Persistencia.csproj",
       "projectName": "Persistencia",
-      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Persistencia\\Persistencia.csproj",
+      "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Persistencia\\Persistencia.csproj",
       "packagesPath": "C:\\Users\\evert\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Persistencia\\obj\\",
+      "outputPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -709,8 +709,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\Modelo.csproj": {
-              "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\FabricaApp\\ChamadaQR\\Models\\Modelo.csproj"
+            "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\Modelo.csproj": {
+              "projectPath": "C:\\Users\\evert\\Desktop\\FABRICA\\ChamadaQR\\Models\\Modelo.csproj"
             }
           }
         }
