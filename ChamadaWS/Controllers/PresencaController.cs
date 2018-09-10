@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ChamadaWS.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Presenca")]
+    [Route("api/controller")]
     public class PresencaController : Controller
     {
         private readonly IPresencaRepositorio _presencaRepositorio;
