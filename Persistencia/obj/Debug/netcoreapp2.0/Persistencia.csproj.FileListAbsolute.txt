@@ -12,3 +12,17 @@ C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Persistencia\obj\Debug\netco
 C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.csproj.CopyComplete
 C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.dll
 C:\Users\evert\Desktop\FABRICA\FabricaApp\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.pdb
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Persistencia.deps.json
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Persistencia.dll
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Persistencia.pdb
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Modelo.dll
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Modelo.pdb
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.csprojAssemblyReference.cache
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.AssemblyInfo.cs
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.csproj.CopyComplete
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.dll
+C:\Users\evert\Desktop\FABRICA\ChamadaQR\Persistencia\obj\Debug\netcoreapp2.0\Persistencia.pdb

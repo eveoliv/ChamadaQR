@@ -12,12 +12,14 @@ namespace ChamadaWS.Models
 
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Presenca> Presencas { get; set; }
+        public DbSet<Calendario> Calendarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Aluno>().ToTable("Aluno");
-            modelBuilder.Entity<Presenca>().ToTable("Aluno");
+            modelBuilder.Entity<Presenca>().ToTable("Presenca");
+            modelBuilder.Entity<Calendario>().ToTable("Calendario");
         }
     }
 }//https://www.youtube.com/watch?v=li_vY4vJbA4

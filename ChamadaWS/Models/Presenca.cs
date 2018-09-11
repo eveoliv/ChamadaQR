@@ -6,9 +6,8 @@ namespace ChamadaWS.Models
 {
     public class Presenca
     {
-        public long? PresencaID { get; set; }
-        public string Data { get; set; }
+        public long? PresencaID { get; set; }        
         public long? AlunoID { get; set; }
-       
+        public long? DataID { get; set; }
     }
 }
