@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ChamadaWS.Controllers
 {
     [Produces("application/json")]
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     public class CalendarioController : Controller
     {
         private readonly ICalendarioRepositorio _calendarioRepositorio;
