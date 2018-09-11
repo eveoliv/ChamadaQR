@@ -13,6 +13,7 @@ namespace ChamadaQR.Data
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Projeto> Projetos { get; set; }
         public DbSet<Presenca> Presencas { get; set; }
+        public DbSet<Calendario> Calendarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,6 +21,7 @@ namespace ChamadaQR.Data
             modelBuilder.Entity<Aluno>().ToTable("Aluno");
             modelBuilder.Entity<Projeto>().ToTable("Projeto");
             modelBuilder.Entity<Presenca>().ToTable("Presenca");
+            modelBuilder.Entity<Calendario>().ToTable("Calendario");
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

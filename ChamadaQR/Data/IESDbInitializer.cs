@@ -7,7 +7,7 @@ namespace ChamadaQR.Data
     {
         public static void Initialize(IESContext context)
         {
-            //context.Database.EnsureDeleted();
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
             //Projetos
@@ -22,9 +22,9 @@ namespace ChamadaQR.Data
                 new Projeto { Nome="Agendamentos", Endereco="Santo Amaro"}
             };
 
-            foreach (Projeto i in projetos)
+            foreach (Projeto p in projetos)
             {
-                context.Projetos.Add(i);
+                context.Projetos.Add(p);
             }
             context.SaveChanges();
 
@@ -36,7 +36,10 @@ namespace ChamadaQR.Data
 
             var presencas = new Presenca[]
             {
-                new Presenca { Data = "18/08/2018" }                
+                new Presenca { AlunoID = 1, CalendarioID = 1 },
+                new Presenca { AlunoID = 2, CalendarioID = 1 },
+                new Presenca { AlunoID = 3, CalendarioID = 1 },
+                new Presenca { AlunoID = 4, CalendarioID = 1 }
             };
 
             foreach (Presenca p in presencas)
@@ -53,17 +56,34 @@ namespace ChamadaQR.Data
 
             var alunos = new Aluno[]
             {
-                new Aluno { Nome="Primeiro Aluno", ProjetoID=1 },
-                new Aluno { Nome="Segundo Aluno", ProjetoID=2,},
-                new Aluno { Nome="Terceiro Aluno", ProjetoID=2}
+                new Aluno { Matricula = 2515201261, Nome="Primeiro Aluno", Status ="A", ProjetoID = 1 },
+                new Aluno { Matricula = 2515201262, Nome="Segundo Aluno", Status ="A", ProjetoID = 1 },
+                new Aluno { Matricula = 2515201263, Nome="Terceiro Aluno", Status ="A", ProjetoID = 2 },
+                new Aluno { Matricula = 2515201264, Nome="Quarto Aluno", Status ="A", ProjetoID = 2 }
             };
         
-            foreach (Aluno d in alunos)
+            foreach (Aluno a in alunos)
             {
-                context.Alunos.Add(d);
+                context.Alunos.Add(a);
             }
             context.SaveChanges();
 
+            //Calendario
+            if (context.Calendarios.Any())
+            {
+                return;
+            }
+
+            var calendario = new Calendario[]
+            {
+                new Calendario { DataNome = "15/09/2018" }               
+            };
+
+            foreach (Calendario c in calendario)
+            {
+                context.Calendarios.Add(c);
+            }
+            context.SaveChanges();
         }
     }
 }
