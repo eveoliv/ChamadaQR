@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChamadaWS.Repositorio
 {
-    interface ICalendarioRepositorio
+    public interface ICalendarioRepositorio
     {
         void Add(Calendario calendario);
         IEnumerable<Calendario> GetAll();
