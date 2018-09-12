@@ -21,11 +21,16 @@ namespace ChamadaQR.Controllers
             calendarioDAL = new CalendarioDAL(context);
         }
 
-        //Get Calendario
+        //Get Calendario/Index
         public async Task<IActionResult> Index()
         {
             return View(await calendarioDAL.ObterCalendariosClassificadosPorNome().ToListAsync());
         }
-        
+
+        //Get Calendario/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
