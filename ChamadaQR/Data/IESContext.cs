@@ -6,9 +6,7 @@ namespace ChamadaQR.Data
     public class IESContext : DbContext
     {
         //Corresponde a classe AlunoDBContext do ChamdaSW
-        public IESContext(DbContextOptions<IESContext> options) : base(options)
-        {
-        }
+        public IESContext(DbContextOptions<IESContext> options) : base(options){}
 
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Projeto> Projetos { get; set; }
