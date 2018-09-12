@@ -11,9 +11,6 @@ namespace Modelo.Cadastros
         public long? PresencaID { get; set; }
         public long? AlunoID { get; set; }
         public long? CalendarioID { get; set; }
-
-        public virtual IEnumerable<Aluno> Alunos { get; set; }
-        public virtual IEnumerable<Calendario> Calendarios { get; set; }
-
+        
     }
 }
