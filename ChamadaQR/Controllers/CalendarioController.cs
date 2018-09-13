@@ -68,8 +68,8 @@ namespace ChamadaQR.Controllers
             {
                 return NotFound();
             }
-
-            var calendario = await _context.Calendarios.Where(c => c.DataID == id).ToListAsync();
+            
+            var calendario = await _context.Calendarios.SingleOrDefaultAsync(c => c.DataID == id);
             
             if (calendario == null)
             {

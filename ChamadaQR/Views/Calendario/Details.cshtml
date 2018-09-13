@@ -1,0 +1,40 @@
+﻿@model Modelo.Cadastros.Calendario
+@{
+    Layout = "_LayoutIES";
+}
+@section styles {
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+}
+    <div class="card-block">
+        <div class="card-header text-white bg-secondary text-center h1">Exibindo uma data existente</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-9">
+                    <div class="form-group">
+                        <label asp-for="DataID" class="control-label"></label>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                            <input asp-for="DataID" class="form-control" disabled="disabled" />
+                        </div>
+                        <label asp-for="DataNome" class="control-label"></label>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </span>
+                            <input asp-for="DataNome" class="form-control" disabled="disabled" />
+                        </div>                                                
+                    </div>
+                </div>
+                <div class="col-3">                   
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-info text-center text-white">
+            <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.DataID">Alterar</a> |
+            <a asp-action="Index" class="btn btn-warning">Retornar à listagem de datas</a>
+        </div>
+    </div>
