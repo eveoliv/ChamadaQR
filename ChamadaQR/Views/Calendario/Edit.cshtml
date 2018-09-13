@@ -1,0 +1,29 @@
+﻿@model Modelo.Cadastros.Calendario
+@{
+    Layout = "_LayoutIES";
+}
+
+<div class="card-block">
+    <div class="card-header text-white bg-secondary text-center h1">Alterando uma data existente</div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="DataID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataNome" class="control-label"></label>
+                <input asp-for="DataNome" class="form-control" />
+                <span asp-validation-for="DataNome" class="text-danger"></span>
+            </div>            
+            <div class="form-group text-center h3">
+                <input type="submit" value="Atualizar Projeto" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-warning">Retornar à listagem de datas</a>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer bg-info text-center text-white">
+        Informe os dados acima e/ou clique em um dos botões de ação
+    </div>
+</div>
+@section ScriptPage {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
