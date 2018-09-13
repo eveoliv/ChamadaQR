@@ -41,7 +41,7 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
 
-            return View();
+            return View(calendario);
         }
 
         //Visoes
