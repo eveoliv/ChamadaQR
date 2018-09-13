@@ -122,7 +122,7 @@ namespace ChamadaQR.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await CalendarioExists(calendario.DataID)
+                    if (!await CalendarioExists(calendario.DataID))
                     {
                         return NotFound();
                     }
