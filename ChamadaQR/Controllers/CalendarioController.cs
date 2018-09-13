@@ -7,6 +7,7 @@ using ChamadaQR.Data.DAL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Modelo.Cadastros;
 
 namespace ChamadaQR.Controllers
 {
@@ -82,6 +83,73 @@ namespace ChamadaQR.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("DataNome")] Calendario calendario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await calendarioDAL.GravarCalendario(calendario);
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("", "Não foi possível inserir os dados.");
+            }
+            return View(calendario);
+        }
+        
+        //Calendario Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(long? id, [Bind("DataID,DataNome")] Calendario calendario)
+        {
+            if (id != calendario.DataID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await calendarioDAL.GravarCalendario(calendario);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await CalendarioExists(calendario.DataID)
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(calendario);
+        }
+
+        // POST: Calendario/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long? id)
+        {
+            var calendario = await calendarioDAL.EliminarCalendarioPorId((long)id);
+            TempData["Message"] = "A Data " + calendario.DataNome.ToUpper() + " foi removida";
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private async Task<bool> CalendarioExists(long? id)
+        {
+            return await calendarioDAL.ObterCalendarioPorId((long)id) != null;
         }
     }
 }
