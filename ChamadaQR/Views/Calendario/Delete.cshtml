@@ -2,11 +2,9 @@
 @{
     Layout = "_LayoutIES";
 }
-
 @section styles {
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 }
-
 <div class="card-block">
     <div class="card-header text-white bg-secondary text-center h1">Exibindo uma data existente</div>
     <div class="card-body">
@@ -26,7 +24,7 @@
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 </span>
                 <input asp-for="DataNome" class="form-control" disabled="disabled" />
-            </div>            
+            </div>                      
         </div>
     </div>
     <div class="card-footer bg-info text-center text-white">
@@ -40,3 +38,4 @@
 @section ScriptPage {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
