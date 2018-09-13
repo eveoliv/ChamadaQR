@@ -27,6 +27,57 @@ namespace ChamadaQR.Controllers
             return View(await calendarioDAL.ObterCalendariosClassificadosPorNome().ToListAsync());
         }
 
+        private async Task<IActionResult> ObterVisaoCalendarioPorId(long? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var calendario = await calendarioDAL.ObterCalendarioPorId((long)id);
+            if (calendario == null)
+            {
+                return NotFound();
+            }
+
+            return View();
+        }
+
+        //Visoes
+        public async Task<IActionResult> Detail(long? id)
+        {
+            return await ObterVisaoCalendarioPorId(id);
+        }
+
+        public async Task<IActionResult> Edit(long id)
+        {
+            return await ObterVisaoCalendarioPorId(id);
+        }
+
+        public async Task<IActionResult> Delete(long? id)
+        {
+            return await ObterVisaoCalendarioPorId(id);
+        }
+
+        // Acoes
+        // GET: Calendario/Details/5
+        public async Task<IActionResult> Details(long? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var calendario = await _context.Calendarios.Where(c => c.DataID == id).ToListAsync();
+            
+            if (calendario == null)
+            {
+                return NotFound();
+            }
+
+            return View(calendario);
+        }
+
         //Get Calendario/Create
         public IActionResult Create()
         {
