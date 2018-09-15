@@ -7,7 +7,7 @@ namespace ChamadaQR.Data
     {
         public static void Initialize(IESContext context)
         {
-            context.Database.EnsureDeleted();
+            //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
             //Projetos
@@ -74,10 +74,10 @@ namespace ChamadaQR.Data
 
             var presencas = new Presenca[]
             {
-                new Presenca { AlunoID = 1, CalendarioID = 1 },
-                new Presenca { AlunoID = 2, CalendarioID = 1 },
-                new Presenca { AlunoID = 3, CalendarioID = 1 },
-                new Presenca { AlunoID = 4, CalendarioID = 1 }
+                new Presenca { AlunoID = 1, DataID = 1 },
+                new Presenca { AlunoID = 2, DataID = 1 },
+                new Presenca { AlunoID = 3, DataID = 1 },
+                new Presenca { AlunoID = 4, DataID = 1 }
             };
 
             foreach (Presenca p in presencas)

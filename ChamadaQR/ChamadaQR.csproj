@@ -54,8 +54,4 @@
     <ProjectReference Include="..\Models\Modelo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Presenca\" />
-  </ItemGroup>
-
 </Project>
