@@ -45,5 +45,10 @@ namespace ChamadaTE
                 MessageBox.Show("Can not open connection ! " + ex.Message.ToString());
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
