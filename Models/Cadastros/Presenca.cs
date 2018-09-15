@@ -16,7 +16,7 @@ namespace Modelo.Cadastros
 
         //fk
         public long? CalendarioID { get; set; }
-        public Calendario calendario { get; set; }
+        public Calendario Calendario { get; set; }
 
     }
 }

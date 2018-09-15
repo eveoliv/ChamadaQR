@@ -26,27 +26,7 @@ namespace ChamadaQR.Data
             {
                 context.Projetos.Add(p);
             }
-            context.SaveChanges();
-
-            //Presenca
-            if (context.Presencas.Any())
-            {
-                return;
-            }
-
-            var presencas = new Presenca[]
-            {
-                new Presenca { AlunoID = 1, CalendarioID = 1 },
-                new Presenca { AlunoID = 2, CalendarioID = 1 },
-                new Presenca { AlunoID = 3, CalendarioID = 1 },
-                new Presenca { AlunoID = 4, CalendarioID = 1 }
-            };
-
-            foreach (Presenca p in presencas)
-            {
-                context.Presencas.Add(p);
-            }
-            context.SaveChanges();
+            context.SaveChanges();            
 
             //Alunos
             if (context.Alunos.Any())
@@ -76,12 +56,33 @@ namespace ChamadaQR.Data
 
             var calendario = new Calendario[]
             {
-                new Calendario { DataNome = "15/09/2018" }               
+                new Calendario { DataNome = "08/09/2018" },
+                new Calendario { DataNome = "14/09/2018" }
             };
 
             foreach (Calendario c in calendario)
             {
                 context.Calendarios.Add(c);
+            }
+            context.SaveChanges();
+
+            //Presenca
+            if (context.Presencas.Any())
+            {
+                return;
+            }
+
+            var presencas = new Presenca[]
+            {
+                new Presenca { AlunoID = 1, CalendarioID = 1 },
+                new Presenca { AlunoID = 2, CalendarioID = 1 },
+                new Presenca { AlunoID = 3, CalendarioID = 1 },
+                new Presenca { AlunoID = 4, CalendarioID = 1 }
+            };
+
+            foreach (Presenca p in presencas)
+            {
+                context.Presencas.Add(p);
             }
             context.SaveChanges();
         }

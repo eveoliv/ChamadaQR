@@ -10,6 +10,8 @@ namespace Modelo.Cadastros
     {
         [Key]
         public long? DataID { get; set; }
-        public string DataNome { get; set; }       
+        public string DataNome { get; set; }
+
+        public virtual IEnumerable<Presenca> Presencas { get; set; }
     }
 }
