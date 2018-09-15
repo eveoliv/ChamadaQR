@@ -10,6 +10,6 @@ namespace ChamadaWS.Models
         [Key]
         public long? PresencaID { get; set; }        
         public long? AlunoID { get; set; }
-        public long? CalendarioID { get; set; }
+        public long? DataID { get; set; }
     }
 }
