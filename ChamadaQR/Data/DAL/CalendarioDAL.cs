@@ -18,17 +18,17 @@ namespace ChamadaQR.Data.DAL
 
         public IQueryable<Calendario> ObterCalendariosClassificadosPorNome()
         {
-            return _context.Calendarios.OrderBy(c => c.DataNome);
+            return _context.Calendarios.OrderBy(c => c.CalendarioNome);
         }
 
         public async Task<Calendario> ObterCalendarioPorId(long id)
         {
-            return await _context.Calendarios.SingleOrDefaultAsync(c => c.DataID == id);
+            return await _context.Calendarios.SingleOrDefaultAsync(c => c.CalendrioID == id);
         }
 
         public async Task<Calendario> GravarCalendario(Calendario calendario)
         {
-            if (calendario.DataID == null)
+            if (calendario.CalendrioID == null)
             {
                 _context.Calendarios.Add(calendario);
             }

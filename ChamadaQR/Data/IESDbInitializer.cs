@@ -56,8 +56,8 @@ namespace ChamadaQR.Data
 
             var calendario = new Calendario[]
             {
-                new Calendario { DataNome = "08/09/2018" },
-                new Calendario { DataNome = "14/09/2018" }
+                new Calendario { CalendarioNome = "08/09/2018" },
+                new Calendario { CalendarioNome = "14/09/2018" }
             };
 
             foreach (Calendario c in calendario)
@@ -66,23 +66,23 @@ namespace ChamadaQR.Data
             }
             context.SaveChanges();
 
-            //Presenca
-            if (context.Presencas.Any())
+            //Frequencia
+            if (context.Frequencias.Any())
             {
                 return;
             }
 
-            var presencas = new Presenca[]
+            var frequencias = new Frequencia[]
             {
-                new Presenca { AlunoID = 1, DataID = 1 },
-                new Presenca { AlunoID = 2, DataID = 1 },
-                new Presenca { AlunoID = 3, DataID = 1 },
-                new Presenca { AlunoID = 4, DataID = 1 }
+                new Frequencia { AlunoID = 1, CalendarioID = 1, Presenca = "SIM" },
+                new Frequencia { AlunoID = 2, CalendarioID = 1, Presenca = "SIM" },
+                new Frequencia { AlunoID = 3, CalendarioID = 1, Presenca = "NAO" },
+                new Frequencia { AlunoID = 4, CalendarioID = 1, Presenca = "SIM" }
             };
 
-            foreach (Presenca p in presencas)
+            foreach (Frequencia p in frequencias)
             {
-                context.Presencas.Add(p);
+                context.Frequencias.Add(p);
             }
             context.SaveChanges();
         }

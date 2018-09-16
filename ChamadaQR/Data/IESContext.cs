@@ -10,7 +10,7 @@ namespace ChamadaQR.Data
 
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Projeto> Projetos { get; set; }
-        public DbSet<Presenca> Presencas { get; set; }
+        public DbSet<Frequencia> Frequencias { get; set; }
         public DbSet<Calendario> Calendarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace ChamadaQR.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Aluno>().ToTable("Aluno");
             modelBuilder.Entity<Projeto>().ToTable("Projeto");
-            modelBuilder.Entity<Presenca>().ToTable("Presenca");
+            modelBuilder.Entity<Frequencia>().ToTable("Frequencia");
             modelBuilder.Entity<Calendario>().ToTable("Calendario");
         }
 
