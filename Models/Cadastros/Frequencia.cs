@@ -15,7 +15,7 @@ namespace Modelo.Cadastros
         public Aluno Aluno { get; set; }
 
         //fk
-        public long? CalendarioID { get; set; }
+        public long? DataID { get; set; }
         public Calendario Calendario { get; set; }
 
         public string Presenca { get; set; }

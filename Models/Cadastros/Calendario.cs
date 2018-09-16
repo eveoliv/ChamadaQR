@@ -9,8 +9,8 @@ namespace Modelo.Cadastros
     public class Calendario
     {
         [Key]
-        public long? CalendrioID { get; set; }
-        public string CalendarioNome { get; set; }
+        public long? DataID { get; set; }
+        public string DataNome { get; set; }
 
         public virtual IEnumerable<Frequencia> Frequencias { get; set; }
     }

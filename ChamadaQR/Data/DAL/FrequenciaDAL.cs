@@ -24,13 +24,13 @@ namespace ChamadaQR.Data.DAL
        public async Task<Frequencia>ObterFrequenciaPorID(long id)
         {
             var frequencia = await _context.Frequencias.SingleOrDefaultAsync(p => p.FrequenciaID == id);
-            _context.Calendarios.Where(p => frequencia.CalendarioID == p.CalendrioID).Load(); ;
+            _context.Calendarios.Where(p => frequencia.DataID == p.DataID).Load(); ;
             return frequencia;
         }
 
         public async Task<Frequencia> GravarFrequencia(Frequencia frequencia)
         {
-            if (frequencia.CalendarioID == null)
+            if (frequencia.DataID == null)
             {
                 _context.Frequencias.Add(frequencia);
             }

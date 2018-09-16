@@ -56,8 +56,8 @@ namespace ChamadaQR.Data
 
             var calendario = new Calendario[]
             {
-                new Calendario { CalendarioNome = "08/09/2018" },
-                new Calendario { CalendarioNome = "14/09/2018" }
+                new Calendario { DataNome = "08/09/2018" },
+                new Calendario { DataNome = "14/09/2018" }
             };
 
             foreach (Calendario c in calendario)
@@ -74,10 +74,10 @@ namespace ChamadaQR.Data
 
             var frequencias = new Frequencia[]
             {
-                new Frequencia { AlunoID = 1, CalendarioID = 1, Presenca = "SIM" },
-                new Frequencia { AlunoID = 2, CalendarioID = 1, Presenca = "SIM" },
-                new Frequencia { AlunoID = 3, CalendarioID = 1, Presenca = "NAO" },
-                new Frequencia { AlunoID = 4, CalendarioID = 1, Presenca = "SIM" }
+                new Frequencia { AlunoID = 1, DataID = 1, Presenca = "S" },
+                new Frequencia { AlunoID = 2, DataID = 1, Presenca = "S" },
+                new Frequencia { AlunoID = 3, DataID = 1, Presenca = "N", Justificativa = "Atestado Medico" },
+                new Frequencia { AlunoID = 4, DataID = 1, Presenca = "S" }
             };
 
             foreach (Frequencia p in frequencias)

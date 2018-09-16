@@ -69,7 +69,7 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
             
-            var calendario = await _context.Calendarios.SingleOrDefaultAsync(c => c.CalendrioID == id);
+            var calendario = await _context.Calendarios.SingleOrDefaultAsync(c => c.DataID == id);
             
             if (calendario == null)
             {
@@ -109,7 +109,7 @@ namespace ChamadaQR.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long? id, [Bind("DataID,DataNome")] Calendario calendario)
         {
-            if (id != calendario.CalendrioID)
+            if (id != calendario.DataID)
             {
                 return NotFound();
             }
@@ -122,7 +122,7 @@ namespace ChamadaQR.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await CalendarioExists(calendario.CalendrioID))
+                    if (!await CalendarioExists(calendario.DataID))
                     {
                         return NotFound();
                     }
@@ -142,7 +142,7 @@ namespace ChamadaQR.Controllers
         public async Task<IActionResult> DeleteConfirmed(long? id)
         {
             var calendario = await calendarioDAL.EliminarCalendarioPorId((long)id);
-            TempData["Message"] = "A Data " + calendario.CalendarioNome.ToUpper() + " foi removida";
+            TempData["Message"] = "A Data " + calendario.DataNome.ToUpper() + " foi removida";
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
