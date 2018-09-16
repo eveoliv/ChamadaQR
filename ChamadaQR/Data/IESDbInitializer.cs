@@ -18,8 +18,8 @@ namespace ChamadaQR.Data
 
             var projetos = new Projeto[]
             {
-                new Projeto { Nome="ChamadaQR", Endereco="Vergueiro"},
-                new Projeto { Nome="Agendamentos", Endereco="Santo Amaro"}
+                new Projeto { ProjetoNome="ChamadaQR", Endereco="Vergueiro"},
+                new Projeto { ProjetoNome="Agendamentos", Endereco="Santo Amaro"}
             };
 
             foreach (Projeto p in projetos)
@@ -36,10 +36,10 @@ namespace ChamadaQR.Data
 
             var alunos = new Aluno[]
             {
-                new Aluno { Matricula = 2515201261, Nome="Primeiro Aluno", Status ="A", ProjetoID = 1 },
-                new Aluno { Matricula = 2515201262, Nome="Segundo Aluno", Status ="A", ProjetoID = 1 },
-                new Aluno { Matricula = 2515201263, Nome="Terceiro Aluno", Status ="A", ProjetoID = 2 },
-                new Aluno { Matricula = 2515201264, Nome="Quarto Aluno", Status ="A", ProjetoID = 2 }
+                new Aluno { Matricula = 2515201261, AlunoNome="Primeiro Aluno", Status ="A", ProjetoID = 1 },
+                new Aluno { Matricula = 2515201262, AlunoNome="Segundo Aluno", Status ="A", ProjetoID = 1 },
+                new Aluno { Matricula = 2515201263, AlunoNome="Terceiro Aluno", Status ="A", ProjetoID = 2 },
+                new Aluno { Matricula = 2515201264, AlunoNome="Quarto Aluno", Status ="A", ProjetoID = 2 }
             };
         
             foreach (Aluno a in alunos)

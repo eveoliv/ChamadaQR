@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Modelo.Cadastros
 {
-    class EnumPresenca
+    public class EnumPresenca
     {
-        enum confirmacao { S, N };
+        enum Presenca { S, N };
     }
 }

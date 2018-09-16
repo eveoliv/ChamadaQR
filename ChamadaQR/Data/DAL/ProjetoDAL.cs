@@ -18,7 +18,7 @@ namespace ChamadaQR.Data.DAL
 
         public IQueryable<Projeto> ObterProjetosClassificadosPorNome()
         {
-            return _context.Projetos.OrderBy(b => b.Nome);
+            return _context.Projetos.OrderBy(b => b.ProjetoNome);
         }
 
         public async Task<Projeto> ObterProjetoPorId(long id)

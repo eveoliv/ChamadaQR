@@ -7,7 +7,7 @@ namespace Modelo.Cadastros
     {
         [Key]
         public long? ProjetoID { get; set; }
-        public string Nome { get; set; }
+        public string ProjetoNome { get; set; }
         public string Endereco { get; set; }
 
         public virtual IEnumerable<Aluno> Alunos { get; set; }

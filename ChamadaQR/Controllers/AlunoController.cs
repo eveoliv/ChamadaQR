@@ -31,7 +31,7 @@ namespace ChamadaQR.Controllers
         public IActionResult Create()
         {
             var Projetos = projetoDAL.ObterProjetosClassificadosPorNome().ToList();
-            Projetos.Insert(0, new Projeto() { ProjetoID = 0, Nome = "Selecione a instituição" });
+            Projetos.Insert(0, new Projeto() { ProjetoID = 0, ProjetoNome = "Selecione a instituição" });
             ViewBag.Projetos = Projetos;
             return View();
         }
@@ -71,7 +71,7 @@ namespace ChamadaQR.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.Nome), "ProjetoID", "Nome", aluno.ProjetoID);
+            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "Nome", aluno.ProjetoID);
 
             return View(aluno);
         }
@@ -105,7 +105,7 @@ namespace ChamadaQR.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.Nome), "ProjetoID", "Nome", aluno.ProjetoID);
+            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "Nome", aluno.ProjetoID);
             return View(aluno);
         }
 
@@ -158,7 +158,7 @@ namespace ChamadaQR.Controllers
         {
             var aluno = await _context.Alunos.SingleOrDefaultAsync(m => m.AlunoID == id);
             _context.Alunos.Remove(aluno);
-            TempData["Message"] = "Aluno " + aluno.Nome.ToUpper() + " foi removido";
+            TempData["Message"] = "Aluno " + aluno.AlunoNome.ToUpper() + " foi removido";
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

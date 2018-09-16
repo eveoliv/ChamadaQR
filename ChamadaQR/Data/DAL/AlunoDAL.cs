@@ -18,7 +18,7 @@ namespace ChamadaQR.Data.DAL
 
         public IQueryable<Aluno> ObterAlunosClassificadosPorNome()
         {
-            return _context.Alunos.Include(i => i.Projeto).OrderBy(b => b.Nome);
+            return _context.Alunos.Include(i => i.Projeto).OrderBy(b => b.AlunoNome);
         }
 
         public async Task<Aluno> ObterAlunoPorId(long id)
