@@ -18,14 +18,20 @@
         <table id="tabela_calendario">
             <thead>
                 <tr>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.FrequenciaID)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.Aluno.AlunoNome)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Calendario.DataNome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Presenca)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Justificativa)
                     </th>
                     <th></th>
                 </tr>
@@ -34,14 +40,20 @@
                 @foreach (var item in Model)
                 {
                 <tr>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.FrequenciaID)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Aluno.AlunoNome)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Calendario.DataNome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Presenca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Justificativa)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.FrequenciaID">Edit</a> |

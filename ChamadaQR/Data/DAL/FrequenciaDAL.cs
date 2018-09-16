@@ -18,7 +18,9 @@ namespace ChamadaQR.Data.DAL
 
         public IQueryable<Frequencia> ObterFrequenciasClassificadasPorNome()
         {
-            return _context.Frequencias.Include(d => d.Calendario).Include(a => a.Aluno).OrderBy(i => i.Aluno.AlunoNome);
+            return _context.Frequencias.Include(c => c.Calendario)
+                                       .Include(a => a.Aluno)                                    
+                                       .OrderBy(i => i.Aluno.AlunoNome);
         }
       
        public async Task<Frequencia>ObterFrequenciaPorID(long id)

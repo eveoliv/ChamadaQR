@@ -78,7 +78,7 @@ namespace ChamadaQR.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("AlunoID,AlunoNome, ProjetoID")] Aluno aluno)
+        public async Task<IActionResult> Edit(long? id, [Bind("AlunoID, AlunoNome, Matricula, ProjetoID, ProjetoNome, Status")] Aluno aluno)
         {
             if (id != aluno.AlunoID)
             {

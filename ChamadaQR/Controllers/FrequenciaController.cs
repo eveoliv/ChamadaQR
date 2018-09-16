@@ -12,18 +12,18 @@ namespace ChamadaQR.Controllers
     public class FrequenciaController : Controller
     {
         private readonly IESContext _context;
-        private readonly FrequenciaDAL presencaDAL;
+        private readonly FrequenciaDAL frequenciaDAL;
 
         public FrequenciaController(IESContext context)
         {
             _context = context;
-            presencaDAL = new FrequenciaDAL(context);
+            frequenciaDAL = new FrequenciaDAL(context);
         }
 
         //GET: Frequencia
         public async Task<IActionResult> Index()
         {
-            return View(await presencaDAL.ObterFrequenciasClassificadasPorNome().ToListAsync());
+            return View(await frequenciaDAL.ObterFrequenciasClassificadasPorNome().ToListAsync());
         }
     }
 }
