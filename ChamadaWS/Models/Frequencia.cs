@@ -12,5 +12,6 @@ namespace ChamadaWS.Models
         public long? AlunoID { get; set; }
         public long? DataID { get; set; }
         public string Presenca { get; set; }
+
     }
 }

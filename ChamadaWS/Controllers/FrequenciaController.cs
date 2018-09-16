@@ -11,11 +11,11 @@ namespace ChamadaWS.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class PresencaController : Controller
+    public class FrequenciaController : Controller
     {
         private readonly IFrequenciaRepositorio _frequenciaRepositorio;
 
-        public PresencaController(IFrequenciaRepositorio frequenciaRepositorio)
+        public FrequenciaController(IFrequenciaRepositorio frequenciaRepositorio)
         {
             _frequenciaRepositorio = frequenciaRepositorio;
         }
