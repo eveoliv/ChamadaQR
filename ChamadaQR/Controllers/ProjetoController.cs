@@ -86,7 +86,7 @@ namespace ChamadaQR.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,Endereco")] Projeto projeto)
+        public async Task<IActionResult> Create([Bind("ProjetoNome,Endereco")] Projeto projeto)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace ChamadaQR.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("ProjetoID,Nome,Endereco")] Projeto projeto)
+        public async Task<IActionResult> Edit(long? id, [Bind("ProjetoID,ProjetoNome,Endereco")] Projeto projeto)
         {
             if (id != projeto.ProjetoID)
             {

@@ -22,7 +22,7 @@
                         @Html.DisplayNameFor(model => model.FrequenciaID)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Aluno.Nome)
+                        @Html.DisplayNameFor(model => model.Aluno.AlunoNome)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Calendario.DataNome)
@@ -35,18 +35,18 @@
                 {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.PresencaID)
+                        @Html.DisplayFor(modelItem => item.FrequenciaID)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Aluno.Nome)
+                        @Html.DisplayFor(modelItem => item.Aluno.AlunoNome)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Calendario.DataNome)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.PresencaID">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.PresencaID">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.PresencaID">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.FrequenciaID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.FrequenciaID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.FrequenciaID">Delete</a>
                     </td>
                 </tr>
                 }

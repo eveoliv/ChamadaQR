@@ -41,7 +41,7 @@ namespace ChamadaQR.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome, ProjetoID")] Aluno aluno)
+        public async Task<IActionResult> Create([Bind("ProjetoNome, ProjetoID")] Aluno aluno)
         {
             try
             {
@@ -71,14 +71,14 @@ namespace ChamadaQR.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "Nome", aluno.ProjetoID);
+            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "ProjetoNome", aluno.ProjetoID);
 
             return View(aluno);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("AlunoID,Nome, ProjetoID")] Aluno aluno)
+        public async Task<IActionResult> Edit(long? id, [Bind("AlunoID,AlunoNome, ProjetoID")] Aluno aluno)
         {
             if (id != aluno.AlunoID)
             {
@@ -105,7 +105,7 @@ namespace ChamadaQR.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "Nome", aluno.ProjetoID);
+            ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "ProjetoNome", aluno.ProjetoID);
             return View(aluno);
         }
 
