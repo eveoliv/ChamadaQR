@@ -13,71 +13,71 @@ namespace ChamadaWS.Controllers
     [Route("api/[controller]")]
     public class PresencaController : Controller
     {
-        private readonly IPresencaRepositorio _presencaRepositorio;
+        private readonly IFrequenciaRepositorio _frequenciaRepositorio;
 
-        public PresencaController(IPresencaRepositorio presencaRepositorio)
+        public PresencaController(IFrequenciaRepositorio frequenciaRepositorio)
         {
-            _presencaRepositorio = presencaRepositorio;
+            _frequenciaRepositorio = frequenciaRepositorio;
         }
 
         [HttpGet]
-        public IEnumerable<Presenca> GetAll()
+        public IEnumerable<Frequencia> GetAll()
         {
-            return _presencaRepositorio.GetAll();
+            return _frequenciaRepositorio.GetAll();
         }
 
-        [HttpGet("{id}", Name="GetPresenca")]
+        [HttpGet("{id}", Name="GetFrequencia")]
         public IActionResult GetById(long id)
         {
-            var presenca = _presencaRepositorio.Find(id);
-            if (presenca == null)
+            var frequencia = _frequenciaRepositorio.Find(id);
+            if (frequencia == null)
             {
                 return NotFound();
             }
-            return new ObjectResult(presenca);
+            return new ObjectResult(frequencia);
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody]Presenca presenca)
+        public IActionResult Create([FromBody]Frequencia frequencia)
         {
-            if (presenca == null)
+            if (frequencia == null)
             {
                 return BadRequest();
             }
 
-            _presencaRepositorio.Add(presenca);
-            return CreatedAtRoute("GetPresenca", new { id = presenca.PresencaID }, presenca);
+            _frequenciaRepositorio.Add(frequencia);
+            return CreatedAtRoute("GetFrequencia", new { id = frequencia.FrequenciaID }, frequencia);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(long id,[FromBody]Presenca presenca)
+        public IActionResult Update(long id,[FromBody]Frequencia frequencia)
         {
-            if (presenca == null || presenca.PresencaID != null)
+            if (frequencia == null || frequencia.FrequenciaID != null)
             {
                 return BadRequest();
             }
 
-            var _presenca = _presencaRepositorio.Find(id);
-            if (presenca == null)
+            var _frequencia = _frequenciaRepositorio.Find(id);
+            if (frequencia == null)
             {
                 return NotFound();
             }
 
-            _presenca.PresencaID = presenca.PresencaID;
-            _presencaRepositorio.Update(_presenca);
+            _frequencia.FrequenciaID = frequencia.FrequenciaID;
+            _frequenciaRepositorio.Update(_frequencia);
             return new NoContentResult();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            var presenca = _presencaRepositorio.Find(id);
-            if (presenca == null)
+            var frequencia = _frequenciaRepositorio.Find(id);
+            if (frequencia == null)
             {
                 return NotFound();
             }
 
-            _presencaRepositorio.Remove(id);
+            _frequenciaRepositorio.Remove(id);
             return new NoContentResult();
         }
     }

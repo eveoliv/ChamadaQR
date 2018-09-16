@@ -33,7 +33,7 @@ namespace ChamadaWS
             services.AddDbContext<WSDbContext>(options =>           
             options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAlunoRepositorio, AlunoRepositorio>();
-            services.AddTransient<IPresencaRepositorio, PresencaRepositorio>();
+            services.AddTransient<IFrequenciaRepositorio, FrequenciaRepositorio>();
             services.AddTransient<ICalendarioRepositorio, CalendarioRepositorio>();
             services.AddMvc();
         }

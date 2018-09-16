@@ -5,11 +5,12 @@ using System.Text;
 
 namespace ChamadaWS.Models
 {
-    public class Presenca
+    public class Frequencia
     {   
         [Key]
-        public long? PresencaID { get; set; }        
+        public long? FrequenciaID { get; set; }        
         public long? AlunoID { get; set; }
         public long? DataID { get; set; }
+        public string Presenca { get; set; }
     }
 }
