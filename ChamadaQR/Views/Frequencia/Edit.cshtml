@@ -1,0 +1,49 @@
+﻿@model Modelo.Cadastros.Frequencia
+@{
+    Layout = "_LayoutIES";
+}
+
+<div class="card-block">
+    <div class="card-header text-white bg-secondary text-center h1">Alterando uma presensa existente</div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="FrequenciaID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Aluno.Matricula" class="control-label"></label>
+                <input asp-for="Aluno.Matricula" class="form-control" />
+                <span asp-validation-for="Aluno.Matricula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aluno.AlunoNome" class="control-label"></label>
+                <input asp-for="Aluno.AlunoNome" class="form-control" />
+                <span asp-validation-for="Aluno.AlunoNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calendario.DataNome" class="control-label"></label>
+                <input asp-for="Calendario.DataNome" class="form-control" />
+                <span asp-validation-for="Calendario.DataNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presenca" class="control-label"></label>
+                <input asp-for="Presenca" class="form-control" />
+                <span asp-validation-for="Presenca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Justificativa" class="control-label"></label>
+                <input asp-for="Justificativa" class="form-control" />
+                <span asp-validation-for="Justificativa" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center h3">
+                <input type="submit" value="Atualizar Projeto" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-warning">Retornar à listagem de presensas</a>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer bg-info text-center text-white">
+        Informe os dados acima e/ou clique em um dos botões de ação
+    </div>
+</div>
+@section ScriptPage {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

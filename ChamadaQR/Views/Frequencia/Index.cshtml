@@ -18,9 +18,9 @@
         <table id="tabela_calendario">
             <thead>
                 <tr>
-                    @*<th>
-                        @Html.DisplayNameFor(model => model.FrequenciaID)
-                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.Aluno.Matricula)
+                    </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Aluno.AlunoNome)
                     </th>
@@ -40,9 +40,9 @@
                 @foreach (var item in Model)
                 {
                 <tr>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.FrequenciaID)
-                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aluno.Matricula)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Aluno.AlunoNome)
                     </td>
