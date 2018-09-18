@@ -21,8 +21,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Calendario.DataNome" class="control-label"></label>
-                <input asp-for="Calendario.DataNome" class="form-control" />
-                <span asp-validation-for="Calendario.DataNome" class="text-danger"></span>
+                <select asp-for="DataID" class="form-control" asp-items=@ViewBag.Calendarios></select>
             </div>
             <div class="form-group">
                 <label asp-for="Presenca" class="control-label"></label>

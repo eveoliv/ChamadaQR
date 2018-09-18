@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ChamadaQR.Data;
 using ChamadaQR.Data.DAL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Modelo.Cadastros;
 
@@ -45,15 +46,15 @@ namespace ChamadaQR.Controllers
             return View(frequencia);
         }
 
-        public async Task<IActionResult> Detail(long? id)
-        {
-            return await ObterVisaoFrequenciaPorId(id);
-        }
+        //public async Task<IActionResult> Detail(long? id)
+        //{
+        //    return await ObterVisaoFrequenciaPorId(id);
+        //}
 
-        public async Task<IActionResult> Edit(long id)
-        {
-            return await ObterVisaoFrequenciaPorId(id);
-        }
+        //public async Task<IActionResult> Edit(long id)
+        //{
+        //    return await ObterVisaoFrequenciaPorId(id);
+        //}
 
         public async Task<IActionResult> Delete(long? id)
         {
@@ -77,6 +78,26 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
 
+            return View(frequencia);
+        }
+
+        //GET: Frequencia
+        public async Task<IActionResult> Edit(long? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }     
+            var frequencia = await _context.Frequencias
+                                           .Include(a => a.Aluno)
+                                           .Include(c => c.Calendario)
+                                           .SingleOrDefaultAsync(f => f.FrequenciaID == id);
+
+            if (frequencia == null)
+            {
+                return NotFound();
+            }
+            ViewBag.Calendarios = new SelectList(_context.Calendarios.OrderBy(c => c.DataNome), "DataID","DataNome", frequencia.DataID);            
             return View(frequencia);
         }
     }
