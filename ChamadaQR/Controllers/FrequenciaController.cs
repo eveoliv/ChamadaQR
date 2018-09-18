@@ -6,6 +6,7 @@ using ChamadaQR.Data;
 using ChamadaQR.Data.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Modelo.Cadastros;
 
 namespace ChamadaQR.Controllers
 {
@@ -13,11 +14,15 @@ namespace ChamadaQR.Controllers
     {
         private readonly IESContext _context;
         private readonly FrequenciaDAL frequenciaDAL;
+        private readonly AlunoDAL alunoDAL;
+        private readonly CalendarioDAL calendarioDAL;
 
         public FrequenciaController(IESContext context)
         {
             _context = context;
             frequenciaDAL = new FrequenciaDAL(context);
+            alunoDAL = new AlunoDAL(context);
+            calendarioDAL = new CalendarioDAL(context);
         }
 
         //GET: Frequencia
@@ -55,7 +60,6 @@ namespace ChamadaQR.Controllers
             return await ObterVisaoFrequenciaPorId(id);
         }
 
-        // GET: Frequencia/Details/5
         public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
@@ -63,10 +67,11 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
 
-            //var frequencia = await _context.Frequencias.Include(d => d.Alunos).SingleOrDefaultAsync(m => m.ProjetoID == id);
-            var frequencia = await _context.Frequencias.Where(f => f.FrequenciaID == id)
-                                                       .Include(a => a.Aluno)
-                                                       .Include(d => d.Calendario).ToListAsync();
+            var frequencia = await _context.Frequencias
+                                           .Include(a => a.Aluno)
+                                           .Include(c => c.Calendario)
+                                           .SingleOrDefaultAsync(f => f.FrequenciaID == id);
+
             if (frequencia == null)
             {
                 return NotFound();

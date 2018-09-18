@@ -1,4 +1,4 @@
-﻿@model Modelo.Cadastros.Projeto
+﻿@model Modelo.Cadastros.Frequencia
 @{
     Layout = "_LayoutIES";
 }
@@ -7,45 +7,59 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-secondary text-center h1">Exibindo um projeto existente</div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-9">
-                <div class="form-group">
-                    <label asp-for="ProjetoID" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-key" aria-hidden="true"></i>
-                        </span>
-                        <input asp-for="ProjetoID" class="form-control" disabled="disabled" />
-                    </div>
-                    <label asp-for="ProjetoNome" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-area-chart" aria-hidden="true"></i>
-                        </span>
-                        <input asp-for="ProjetoNome" class="form-control" disabled="disabled" />
-                    </div>
-                    <label asp-for="Endereco" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-address-book" aria-hidden="true"></i>
-                        </span>
-                        <input asp-for="Endereco" class="form-control" disabled="disabled" />
-                    </div>
+    <div class="card-block">
+        <div class="card-header text-white bg-secondary text-center h1">Exibindo uma presenca existente</div>
+        <div class="card-body">
+            <div class="form-group">
+                <label asp-for="Aluno.Matricula" class="control-label"></label>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                    </span>
+                    <input asp-for="Aluno.Matricula" class="form-control" disabled="disabled" />
                 </div>
-            </div>
-            <div class="col-3">
-                @*@Html.Partial("~/Views/Projeto/_ComAlunos.cshtml", Modelo.Cadastros.Projeto.Alunos.ToList())*@
+
+                <label asp-for="Aluno.AlunoNome" class="control-label"></label>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    </span>
+                    <input asp-for="Aluno.AlunoNome" class="form-control" disabled="disabled" />
+                </div>
+
+                <label asp-for="Calendario.DataNome" class="control-label"></label>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                    </span>
+                    <input asp-for="Calendario.DataNome" class="form-control" disabled="disabled" />
+                </div>
+
+                <label asp-for="Presenca" class="control-label"></label>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </span>
+                    <input asp-for="Presenca" class="form-control" disabled="disabled" />
+                </div>
+
+                <label asp-for="Justificativa" class="control-label"></label>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-area-chart" aria-hidden="true"></i>
+                    </span>
+                    <input asp-for="Justificativa" class="form-control" disabled="disabled" />
+                </div>
+
             </div>
         </div>
+        <div class="card-footer bg-info text-center text-white">
+            <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.FrequenciaID">Alterar</a> |
+            <a asp-action="Index" class="btn btn-warning">Retornar à listagem de frequencia</a>
+        </div>
     </div>
-    <div class="card-footer bg-info text-center text-white">
-        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.ProjetoID">Alterar</a> |
-        <a asp-action="Index" class="btn btn-warning">Retornar à listagem de projetos</a>
-    </div>
-</div>

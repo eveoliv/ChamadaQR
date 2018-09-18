@@ -20,5 +20,6 @@ namespace Modelo.Cadastros
 
         public string Presenca { get; set; }
         public string Justificativa { get; set; }
+
     }
 }
