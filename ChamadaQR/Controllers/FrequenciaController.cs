@@ -39,46 +39,22 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
             var frequencia = await frequenciaDAL.ObterFrequenciaPorID((long)id);
+
             if (frequencia == null)
             {
                 return NotFound();
             }
             return View(frequencia);
         }
-
-        //public async Task<IActionResult> Detail(long? id)
-        //{
-        //    return await ObterVisaoFrequenciaPorId(id);
-        //}
-
-        //public async Task<IActionResult> Edit(long id)
-        //{
-        //    return await ObterVisaoFrequenciaPorId(id);
-        //}
+        //GET: Details
+        public async Task<IActionResult> Details(long? id)
+        {
+            return await ObterVisaoFrequenciaPorId(id);
+        }       
 
         public async Task<IActionResult> Delete(long? id)
         {
             return await ObterVisaoFrequenciaPorId(id);
-        }
-
-        public async Task<IActionResult> Details(long? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var frequencia = await _context.Frequencias
-                                           .Include(a => a.Aluno)
-                                           .Include(c => c.Calendario)
-                                           .SingleOrDefaultAsync(f => f.FrequenciaID == id);
-
-            if (frequencia == null)
-            {
-                return NotFound();
-            }
-
-            return View(frequencia);
         }
 
         //GET: Frequencia
@@ -87,18 +63,20 @@ namespace ChamadaQR.Controllers
             if (id == null)
             {
                 return NotFound();
-            }     
-            var frequencia = await _context.Frequencias
-                                           .Include(a => a.Aluno)
-                                           .Include(c => c.Calendario)
+            }
+
+            var frequencia = 
+                await _context.Frequencias.Include(a => a.Aluno).Include(c => c.Calendario)
                                            .SingleOrDefaultAsync(f => f.FrequenciaID == id);
 
             if (frequencia == null)
             {
                 return NotFound();
             }
-            ViewBag.Calendarios = new SelectList(_context.Calendarios.OrderBy(c => c.DataNome), "DataID","DataNome", frequencia.DataID);            
+            ViewBag.Calendarios = new SelectList(_context.Calendarios.OrderBy(c => c.DataNome), "DataID", "DataNome", frequencia.DataID);
             return View(frequencia);
         }
+
+
     }
 }
