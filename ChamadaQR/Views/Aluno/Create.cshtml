@@ -4,7 +4,7 @@
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-danger text-center h1">Registrando um novo aluno</div>
+    <div class="card-header text-white bg-danger text-center h1">Cadastrando um novo Aluno</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -18,7 +18,7 @@
                 <select asp-for="ProjetoID" class="form-control" asp-items="@(new SelectList(@ViewBag.Projetos, "ProjetoID", "ProjetoNome"))" ></select>
             </div>
             <div class="form-group text-center h3">
-                <input type="submit" value="Registrar Aluno" class="btn btn-light" />
+                <input type="submit" value="Cadastrar Aluno" class="btn btn-light" />
                 <a asp-action="Index" class="btn btn-info">Retornar à listagem de Alunos</a>
             </div>
         </form>
