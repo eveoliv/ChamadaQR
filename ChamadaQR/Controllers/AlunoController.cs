@@ -31,7 +31,7 @@ namespace ChamadaQR.Controllers
         public IActionResult Create()
         {
             var Projetos = projetoDAL.ObterProjetosClassificadosPorNome().ToList();
-            Projetos.Insert(0, new Projeto() { ProjetoID = 0, ProjetoNome = "Selecione a instituição" });
+            Projetos.Insert(0, new Projeto() { ProjetoID = 0, ProjetoNome = "Selecione o projeto" });
             ViewBag.Projetos = Projetos;
             return View();
         }
@@ -72,7 +72,7 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
             ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "ProjetoNome", aluno.ProjetoID);
-
+            ViewBag.Status = typeof(Enum.eStatus);
             return View(aluno);
         }
 

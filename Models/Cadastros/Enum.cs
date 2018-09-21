@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Modelo.Cadastros
 {
-    public class EnumPresenca
+    public class Enum
     {
-        enum Presenca { S, N };
+        public enum ePresenca { S, N };
+
+        public enum eStatus { ATIVO, INATIVO };
     }
 }
