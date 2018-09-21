@@ -16,6 +16,7 @@ namespace ChamadaQR.Controllers
         private readonly IESContext _context;
         private readonly FrequenciaDAL frequenciaDAL;
         private readonly AlunoDAL alunoDAL;
+        private readonly ProjetoDAL projetoDAL;
         private readonly CalendarioDAL calendarioDAL;
 
         public FrequenciaController(IESContext context)
@@ -77,6 +78,16 @@ namespace ChamadaQR.Controllers
             return View(frequencia);
         }
 
+        //Get:Frequencia Create
+        public IActionResult Create()
+        {
+            var Alunos = alunoDAL.ObterAlunosClassificadosPorNome().ToList();
+            Alunos.Insert(0, new Aluno() { AlunoID = 0, AlunoNome = "Selecione o Aluno" });
+            ViewBag.Alunos = Alunos;
 
+            var Calendarios = calendarioDAL.ObterCalendariosClassificadosPorNome().ToList();
+            Calendarios.Insert(0, new Calendario() {DataID = 0, DataNome = "Selecione a Data" });
+            return View();
+        }
     }
 }

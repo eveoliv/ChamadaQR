@@ -1,26 +1,24 @@
-﻿@model Modelo.Cadastros.Projeto
+﻿@model Modelo.Cadastros.Frequencia
 @{
     Layout = "_LayoutIES";
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-danger text-center h1">Registrando um novo Projeto</div>
+    <div class="card-header text-white bg-danger text-center h1">Registrando uma nova Presença</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ProjetoNome" class="control-label"></label>
-                <input asp-for="ProjetoNome" class="form-control" />
-                <span asp-validation-for="ProjetoNome" class="text-danger"></span>
+                <label asp-for="Aluno.AlunoNome" class="control-label"></label>
+                <select asp-for="Aluno.AlunoNome" class="form-control" asp-items="@(new SelectList(@ViewBag.Alunos, "AlunoID", "AlunoNome"))"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Endereco" class="control-label"></label>
-                <input asp-for="Endereco" class="form-control" />
-                <span asp-validation-for="Endereco" class="text-danger"></span>
+                <label asp-for="Calendario" class="control-label"></label>
+                <select asp-for="Calendario" class="form-control" asp-items="@(new SelectList(@ViewBag.Alunos, "AlunoID", "AlunoNome"))"></select>
             </div>
             <div class="form-group text-center h3">
                 <input type="submit" value="Registrar Projeto" class="btn btn-light" />
-                <a asp-action="Index" class="btn btn-info">Retornar à listagem de projetos</a>
+                <a asp-action="Index" class="btn btn-info">Retornar à listagem de frequencia</a>
             </div>
         </form>
     </div>
