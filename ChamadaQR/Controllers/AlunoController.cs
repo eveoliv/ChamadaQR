@@ -33,6 +33,9 @@ namespace ChamadaQR.Controllers
             var Projetos = projetoDAL.ObterProjetosClassificadosPorNome().ToList();
             Projetos.Insert(0, new Projeto() { ProjetoID = 0, ProjetoNome = "Selecione o projeto" });
             ViewBag.Projetos = Projetos;
+
+            var status = new Aluno {Status = "ATIVO" };
+            ViewBag.Status = status;
             return View();
         }
 
@@ -41,7 +44,7 @@ namespace ChamadaQR.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProjetoNome, ProjetoID")] Aluno aluno)
+        public async Task<IActionResult> Create([Bind("AlunoID, Matricula, AlunoNome, Status, ProjetoID")] Aluno aluno)
         {
             try
             {
@@ -72,7 +75,7 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
             ViewBag.Projetos = new SelectList(_context.Projetos.OrderBy(b => b.ProjetoNome), "ProjetoID", "ProjetoNome", aluno.ProjetoID);
-            ViewBag.Status = typeof(Enum.eStatus);
+            //ViewBag.Alunos = new SelectList(_context.Alunos.OrderBy(a => a.AlunoID),"AlunoID","AlunoNome", aluno.Status.GetEnumerator(e));//typeof(Enum.eStatus));
             return View(aluno);
         }
 
