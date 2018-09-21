@@ -36,7 +36,7 @@ namespace ChamadaQR.Data.DAL
 
         public async Task<Frequencia> GravarFrequencia(Frequencia frequencia)
         {
-            if (frequencia.DataID == null)
+            if (frequencia.FrequenciaID == null)
             {
                 _context.Frequencias.Add(frequencia);
             }

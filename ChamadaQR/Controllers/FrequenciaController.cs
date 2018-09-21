@@ -87,7 +87,39 @@ namespace ChamadaQR.Controllers
 
             var Calendarios = calendarioDAL.ObterCalendariosClassificadosPorNome().ToList();
             Calendarios.Insert(0, new Calendario() {DataID = 0, DataNome = "Selecione a Data" });
+            ViewBag.Calendarios = Calendarios;
+
             return View();
         }
-    }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("AlunoID,DataID,Presensa,Justificativa")] Frequencia frequencia)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await frequenciaDAL.GravarFrequencia(frequencia);
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("", "Não foi possível inserir os dados.");
+            }
+            return View(frequencia);
+        }
+
+        // POST: Projeto/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long? id)
+        {
+            var frequencia = await _context.Frequencias.SingleOrDefaultAsync(f => f.FrequenciaID == id);
+            _context.Frequencias.Remove(frequencia);
+            TempData["Message"] = "Presenca " + frequencia.Calendario.DataID + " foi removida";
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 }
