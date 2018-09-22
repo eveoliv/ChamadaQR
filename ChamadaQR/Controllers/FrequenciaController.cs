@@ -78,6 +78,39 @@ namespace ChamadaQR.Controllers
             return View(frequencia);
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(long? id, [Bind("AlunoID,DataID,Presenca,Justificativa")] Frequencia frequencia)
+        {
+            if (id != frequencia.FrequenciaID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await frequenciaDAL.AtualizarFrequencia(frequencia);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await FrequenciaExists(frequencia.FrequenciaID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(frequencia);
+        }
+
+
         //Get:Frequencia Create
         public IActionResult Create()
         {
@@ -89,12 +122,17 @@ namespace ChamadaQR.Controllers
             Calendarios.Insert(0, new Calendario() { DataID = 0, DataNome = "Selecione a Data" });
             ViewBag.Calendarios = Calendarios;
             
+            IList<string> p = new List<string>();
+            p.Add("S");
+            p.Add("N");
+            ViewBag.p = p;
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlunoID,DataID,Presensa,Justificativa")] Frequencia frequencia)
+        public async Task<IActionResult> Create([Bind("AlunoID,DataID,Presenca,Justificativa")] Frequencia frequencia)
         {
             try
             {
@@ -121,6 +159,11 @@ namespace ChamadaQR.Controllers
             TempData["Message"] = "A Presenca foi removida";
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private async Task<bool> FrequenciaExists(long? id)
+        {
+            return await frequenciaDAL.ObterFrequenciaPorID((long)id) != null;
         }
     }
 }
