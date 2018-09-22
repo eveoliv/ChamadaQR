@@ -11,7 +11,7 @@ namespace Modelo.Cadastros
         public string Endereco { get; set; }
 
         public virtual IEnumerable<Aluno> Alunos { get; set; }
+        public virtual IEnumerable<Professor> Professores { get; set; }
 
-        
     }
 }

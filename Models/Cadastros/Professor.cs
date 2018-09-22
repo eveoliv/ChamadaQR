@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Modelo.Cadastros
 {
-    class Professor
+    public class Professor
     {
         [Key]
         public int ProfessorID { get; set; }

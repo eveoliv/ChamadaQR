@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Modelo.Cadastros.Professor>
+@{
+    Layout = "_LayoutIES";
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/lib/datatables/media/css/jquery.dataTables.min.css" />
+}
+
+@if (@TempData["Message"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
+<div class="card-block">
+    <div class="card-header text-white bg-primary text-center h1">Professores Cadastrados</div>
+    <div class="card-body">
+        <table id="tabela_professores">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Matricula)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProfessorNome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Projeto.ProjetoNome)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matricula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessorNome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Projeto.ProjetoNome)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ProfessorID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProfessorID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProfessorID">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer bg-success text-center">
+        <a asp-action="Create" class="btn-success">Cadastrar um novo professor</a>
+    </div>
+</div>
+
+
+@section ScriptPage {
+    <script type="text/javascript" src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabela_professores').DataTable({
+                "order": [[1, "asc"]]
+            });
+        });
+    </script>
+}

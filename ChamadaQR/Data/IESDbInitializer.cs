@@ -48,6 +48,27 @@ namespace ChamadaQR.Data
             }
             context.SaveChanges();
 
+
+            //Professor
+            if (context.Professores.Any())
+            {
+                return;
+            }
+
+            var professor = new Professor[]
+            {
+                new Professor { Matricula = 2515201261, ProfessorNome="Primeiro Professor", Status ="ATIVO", ProjetoID = 1 },
+                new Professor { Matricula = 2515201262, ProfessorNome="Segundo Professor", Status ="ATIVO", ProjetoID = 2 }
+                
+            };
+
+            foreach (Professor a in professor)
+            {
+                context.Professores.Add(a);
+            }
+            context.SaveChanges();
+
+
             //Calendario
             if (context.Calendarios.Any())
             {
