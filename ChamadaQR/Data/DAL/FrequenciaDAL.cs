@@ -36,16 +36,14 @@ namespace ChamadaQR.Data.DAL
 
         public async Task<Frequencia> GravarFrequencia(Frequencia frequencia)
         {                    
-            _context.Frequencias.Add(frequencia);
-           
+            _context.Frequencias.Add(frequencia);           
             await _context.SaveChangesAsync();
             return frequencia;
         }
 
         public async Task<Frequencia> AtualizarFrequencia(Frequencia frequencia)
         {           
-            _context.Update(frequencia);
-            
+            _context.Update(frequencia);            
             await _context.SaveChangesAsync();
             return frequencia;
         }

@@ -75,13 +75,14 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
             ViewBag.Calendarios = new SelectList(_context.Calendarios.OrderBy(c => c.DataNome), "DataID", "DataNome", frequencia.DataID);
+            ValidaPresenca();
             return View(frequencia);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long? id, [Bind("AlunoID,DataID,Presenca,Justificativa")] Frequencia frequencia)
+        public async Task<IActionResult> Edit(long? id, [Bind("Matricula,AlunoNome,DataNome,Presenca,Justificativa")] Frequencia frequencia)
         {
             if (id != frequencia.FrequenciaID)
             {
@@ -107,6 +108,7 @@ namespace ChamadaQR.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ValidaPresenca();
             return View(frequencia);
         }
 
@@ -121,14 +123,12 @@ namespace ChamadaQR.Controllers
             var Calendarios = calendarioDAL.ObterCalendariosClassificadosPorNome().ToList();
             Calendarios.Insert(0, new Calendario() { DataID = 0, DataNome = "Selecione a Data" });
             ViewBag.Calendarios = Calendarios;
-            
-            IList<string> p = new List<string>();
-            p.Add("S");
-            p.Add("N");
-            ViewBag.p = p;
+
+            ValidaPresenca();
 
             return View();
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -164,6 +164,15 @@ namespace ChamadaQR.Controllers
         private async Task<bool> FrequenciaExists(long? id)
         {
             return await frequenciaDAL.ObterFrequenciaPorID((long)id) != null;
+        }
+
+
+        private void ValidaPresenca()
+        {
+            IList<string> p = new List<string>();
+            p.Add("S");
+            p.Add("N");
+            ViewBag.p = p;
         }
     }
 }

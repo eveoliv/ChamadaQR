@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ChamadaQR.Controllers
 {
@@ -34,8 +35,7 @@ namespace ChamadaQR.Controllers
             Projetos.Insert(0, new Projeto() { ProjetoID = 0, ProjetoNome = "Selecione o projeto" });
             ViewBag.Projetos = Projetos;
 
-            var status = new Aluno {Status = "ATIVO" };
-            ViewBag.Status = status;
+            ValidaStatus();
             return View();
         }
 
@@ -165,5 +165,14 @@ namespace ChamadaQR.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        private void ValidaStatus()
+        {
+            IList<string> s = new List<string>();
+            s.Add("ATIVO");
+            s.Add("INATIVO");
+            ViewBag.s = s;
+        }
+
     }
 }
