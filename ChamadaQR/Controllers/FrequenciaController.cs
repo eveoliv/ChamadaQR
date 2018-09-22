@@ -51,7 +51,7 @@ namespace ChamadaQR.Controllers
         public async Task<IActionResult> Details(long? id)
         {
             return await ObterVisaoFrequenciaPorId(id);
-        }       
+        }
 
         public async Task<IActionResult> Delete(long? id)
         {
@@ -66,7 +66,7 @@ namespace ChamadaQR.Controllers
                 return NotFound();
             }
 
-            var frequencia = 
+            var frequencia =
                 await _context.Frequencias.Include(a => a.Aluno).Include(c => c.Calendario)
                                            .SingleOrDefaultAsync(f => f.FrequenciaID == id);
 
@@ -86,9 +86,9 @@ namespace ChamadaQR.Controllers
             ViewBag.Alunos = Alunos;
 
             var Calendarios = calendarioDAL.ObterCalendariosClassificadosPorNome().ToList();
-            Calendarios.Insert(0, new Calendario() {DataID = 0, DataNome = "Selecione a Data" });
+            Calendarios.Insert(0, new Calendario() { DataID = 0, DataNome = "Selecione a Data" });
             ViewBag.Calendarios = Calendarios;
-
+            
             return View();
         }
 
@@ -118,8 +118,9 @@ namespace ChamadaQR.Controllers
         {
             var frequencia = await _context.Frequencias.SingleOrDefaultAsync(f => f.FrequenciaID == id);
             _context.Frequencias.Remove(frequencia);
-            TempData["Message"] = "Presenca " + frequencia.Calendario.DataID + " foi removida";
+            TempData["Message"] = "A Presenca foi removida";
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+    }
 }
